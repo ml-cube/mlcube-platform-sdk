@@ -1,0 +1,798 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+    
+    
+      
+        <title>Client - Platform SDK Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Platform SDK Documentation" class="md-header__button md-logo" aria-label="Platform SDK Documentation" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Platform SDK Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Client
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Platform SDK Documentation" class="md-nav__button md-logo" aria-label="Platform SDK Documentation" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    Platform SDK Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        ml3-platform-sdk
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Client
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Client
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ml3platformclient" class="md-nav__link">
+    ML3PlatformClient
+  </a>
+  
+    <nav class="md-nav" aria-label="ML3PlatformClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_company" class="md-nav__link">
+    .create_company
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_project" class="md-nav__link">
+    .create_project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show_projects" class="md-nav__link">
+    .show_projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_task" class="md-nav__link">
+    .create_task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show_tasks" class="md-nav__link">
+    .show_tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_data_schema" class="md-nav__link">
+    .add_data_schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show_data_schema" class="md-nav__link">
+    .show_data_schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_data_schema" class="md-nav__link">
+    .update_data_schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_historical_data" class="md-nav__link">
+    .add_historical_data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_model" class="md-nav__link">
+    .create_model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show_models" class="md-nav__link">
+    .show_models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_model_reference" class="md-nav__link">
+    .add_model_reference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_production_data" class="md-nav__link">
+    .add_production_data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_importance_weights" class="md-nav__link">
+    .get_importance_weights
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show_running_operations" class="md-nav__link">
+    .show_running_operations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ml3platformclient" class="md-nav__link">
+    ML3PlatformClient
+  </a>
+  
+    <nav class="md-nav" aria-label="ML3PlatformClient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_company" class="md-nav__link">
+    .create_company
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_project" class="md-nav__link">
+    .create_project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show_projects" class="md-nav__link">
+    .show_projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_task" class="md-nav__link">
+    .create_task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show_tasks" class="md-nav__link">
+    .show_tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_data_schema" class="md-nav__link">
+    .add_data_schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show_data_schema" class="md-nav__link">
+    .show_data_schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update_data_schema" class="md-nav__link">
+    .update_data_schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_historical_data" class="md-nav__link">
+    .add_historical_data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_model" class="md-nav__link">
+    .create_model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show_models" class="md-nav__link">
+    .show_models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_model_reference" class="md-nav__link">
+    .add_model_reference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_production_data" class="md-nav__link">
+    .add_production_data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_importance_weights" class="md-nav__link">
+    .get_importance_weights
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show_running_operations" class="md-nav__link">
+    .show_running_operations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1"></h1>
+<h2 id="ml3platformclient">ML3PlatformClient</h2>
+<pre><code class="language-python">ML3PlatformClient(
+   url: str, user_id: str, api_key: str
+)
+</code></pre>
+<hr />
+<p>Client for interacting with ML3Platform APIs</p>
+<p><strong>Methods:</strong></p>
+<h3 id="create_company">.create_company</h3>
+<pre><code class="language-python">.create_company(
+   name: str, address: str, vat: str
+)
+</code></pre>
+<hr />
+<p>Create a company</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>name</strong>  : the name of the company</li>
+<li><strong>address</strong>  : the address of the company</li>
+<li><strong>vat</strong>  : the vat of the company</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>the company id associated with the new company (string)</p>
+<h3 id="create_project">.create_project</h3>
+<pre><code class="language-python">.create_project(
+   name: str, company_id: str
+)
+</code></pre>
+<hr />
+<p>Create a project</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>name</strong>  : the name of the project</li>
+<li><strong>company_id</strong>  : the identifier of the company that owns the project</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>the project id associated with the created project (string)</p>
+<h3 id="show_projects">.show_projects</h3>
+<pre><code class="language-python">.show_projects()
+</code></pre>
+<hr />
+<p>Show a list all projects</p>
+<p><strong>Example output:</strong></p>
+<pre><code>Project ID                Name
+------------------------  ----------
+6475f8c9ebac5081e529s63f  my project
+</code></pre>
+<h3 id="create_task">.create_task</h3>
+<pre><code class="language-python">.create_task(
+   project_id: str, name: str, tags: List[str], task_type: TaskType
+)
+</code></pre>
+<hr />
+<p>Create a task</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>project_id</strong>  : the identifier of the project that includes the task</li>
+<li><strong>name</strong>  : the name of the task</li>
+<li><strong>tags</strong>  : a list of tags associated with the task</li>
+<li><strong>task_type</strong>  : the type of the task</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>the task id associated with the created task (string)</p>
+<h3 id="show_tasks">.show_tasks</h3>
+<pre><code class="language-python">.show_tasks(
+   project_id: str
+)
+</code></pre>
+<hr />
+<p>Show a list of tasks included in a project</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>project_id</strong>  : the identifier of a project</li>
+</ul>
+<hr />
+<p><strong>Example output:</strong></p>
+<pre><code>Task ID                   Name     Type            Status     Status start date
+------------------------  -------  --------------  --------   -----------------
+6476040d583201813ab4539a  my task  classification  OK         03-02-2023 10:14:06
+</code></pre>
+<h3 id="add_data_schema">.add_data_schema</h3>
+<pre><code class="language-python">.add_data_schema(
+   task_id: str, data_schema: Dict[str, List[dict]]
+)
+</code></pre>
+<hr />
+<p>Associate a data schema to a task</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>task_id</strong>  : the identifier of the task</li>
+<li><strong>data_schema</strong>  : the data schema that characterize your task</li>
+</ul>
+<h3 id="show_data_schema">.show_data_schema</h3>
+<pre><code class="language-python">.show_data_schema(
+   task_id: str
+)
+</code></pre>
+<hr />
+<p>Show data schema of associated with a task</p>
+<p><strong>Example output:</strong></p>
+<pre><code>Column name       Role     Type      Nullable
+----------------  -------  --------  ----------
+sample_id         id       string    False
+timestamp         time_id  string    False
+sepallength       input    float     False
+sepalwidth        input    float     False
+petallength       input    float     False
+petalwidth        input    float     False
+class             target   category  False
+</code></pre>
+<h3 id="update_data_schema">.update_data_schema</h3>
+<pre><code class="language-python">.update_data_schema(
+   task_id: str, data_schema: Dict[str, List[dict]]
+)
+</code></pre>
+<hr />
+<p>Update an existing data schema</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>task_id</strong>  : the identifier of the task</li>
+<li><strong>data_schema</strong>  : the set of new columns that should be added to the data schema</li>
+</ul>
+<h3 id="add_historical_data">.add_historical_data</h3>
+<pre><code class="language-python">.add_historical_data(
+   task_id: str, data_path: str
+)
+</code></pre>
+<hr />
+<p>Add a batch of historical data</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>task_id</strong>  : the identifier of the task</li>
+<li><strong>data_path</strong>  : path to the csv file containing the historical data</li>
+</ul>
+<h3 id="create_model">.create_model</h3>
+<pre><code class="language-python">.create_model(
+   project_id: str, task_id: str, name: str, version: str
+)
+</code></pre>
+<hr />
+<p>Create a model.</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>project_id</strong>  : the identifier of the project</li>
+<li><strong>task_id</strong>  : the identifier of the task</li>
+<li><strong>name</strong>  : the name of the model</li>
+<li><strong>version</strong>  : the current version of the model</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>the model id associated with the created model (string)</p>
+<h3 id="show_models">.show_models</h3>
+<pre><code class="language-python">.show_models(
+   task_id: str
+)
+</code></pre>
+<hr />
+<p>Show a list of models included in a task.</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>task_id</strong>  : the identifier of the task</li>
+</ul>
+<hr />
+<p><strong>Example output:</strong></p>
+<pre><code>Model ID                  Name        Version    Status     Status start date
+------------------------  ----------  ---------  --------   -----------------
+64760430583201813ab4ad1e  model_name  v1.0       OK         03-02-2023 10:14:06
+</code></pre>
+<h3 id="add_model_reference">.add_model_reference</h3>
+<pre><code class="language-python">.add_model_reference(
+   project_id: str, task_id: str, model_id: str, data_path: str
+)
+</code></pre>
+<hr />
+<p>Add a batch of reference data associated with a given model</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>project_id</strong>  : the identifier of the project</li>
+<li><strong>task_id</strong>  : the identifier of the task</li>
+<li><strong>model_id</strong>  : the identifier of the model</li>
+<li><strong>data_path</strong>  : path to the csv file containing the reference data</li>
+</ul>
+<h3 id="add_production_data">.add_production_data</h3>
+<pre><code class="language-python">.add_production_data(
+   task_id: str, data_path: str
+)
+</code></pre>
+<hr />
+<p>Add a batch of production data associated with a given task</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>task_id</strong>  : the identifier of the task</li>
+<li><strong>data_path</strong>  : path to the csv file containing the production data</li>
+</ul>
+<h3 id="get_importance_weights">.get_importance_weights</h3>
+<pre><code class="language-python">.get_importance_weights(
+   task_id: str, model_id: str, model_version: str,
+   retrain_event_id: Optional[str] = None
+)
+</code></pre>
+<hr />
+<p>For a given model version, get the importance weights
+with the possibility to specify a retrain_event_id.</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>task_id</strong>  : the identifier of the task</li>
+<li><strong>model_id</strong>  : the identifier of the task</li>
+<li><strong>model_version</strong>  : the version of the model</li>
+<li><strong>retrain_event_id</strong>  : An optional retrain event may be provided.
+If <code>None</code>, the weights will be computed based on the
+distribution of the last concept.</li>
+</ul>
+<h3 id="show_running_operations">.show_running_operations</h3>
+<pre><code class="language-python">.show_running_operations(
+   task_id: str
+)
+</code></pre>
+<hr />
+<p>This method shows a list of  all running
+operations related to a given task</p>
+<p><strong>Args</strong></p>
+<ul>
+<li><strong>task_id</strong>  : the identifier of the task</li>
+</ul>
+<hr />
+<p><strong>Example output:</strong></p>
+<pre><code>Operation             Status
+--------------------  --------
+add_model_reference   running
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
