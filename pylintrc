@@ -1,0 +1,21 @@
+[FORMAT]
+disable=
+    C0114, # disable module docstring
+    R0903, # too few public methods
+    R0912, # too many branches
+    R0913, # too many arguments
+    R0914, # too many local variables
+    R0915, # too many statements
+    R1705, # unnecessary else statement after return
+    W0511, # TO-DO statement
+    R0902, # too many instance attributes
+    C2801, # Unnecessarily calls dunder method __getattribute__
+    C0302, # too many lines in module
+# Good variable names which should always be accepted, separated by a comma
+good-names=i,j,k,ex,Run,_,pk,x,y,t,s,n,x_,p,a,b,h,r,m,o,q,e,f,X,v,z
+
+# Regexp for a line that is allowed to be longer than the limit
+ignore-long-lines=^\s*(# )?<?https?://\S+>?$|^\s*(\w*\s*=\s*)?(\"|\').*(\"|\'),?\s*$
+
+[master]
+ignore-patterns=.*_test\.py,test_.*\.py
